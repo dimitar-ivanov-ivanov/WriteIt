@@ -1,0 +1,5 @@
+﻿@if (TempData.ContainsKey("__Message"))
+{
+    var message = (MessageModel)TempData.Get<MessageModel>("__Message");
+    <message type="@message.Type" message="@message.Message"></message>
+}

@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Welcome to admin page</h2>
+
+<a asp-area="Admin" asp-controller="Threads"
+   asp-action="Create" class="btn btn-success">
+    <span class="fa fa-plus">Create Thread</span>
+</a>
+<br />
+<a asp-area="Admin" asp-controller="Users"
+   asp-action="Index" class="btn btn-success">
+    <span class="fa fa-user">View Users</span>
+</a>

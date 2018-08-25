@@ -1,0 +1,21 @@
+﻿@model IndexModel
+
+@foreach (var item in Model.Posts)
+{
+    <tr>
+        <td>
+            <a asp-area="" asp-page="/Posts/Details" asp-route-instanceId="@Model.ThreadInstanceId" asp-route-id="@item.Id">
+                @item.Name
+            </a>
+        </td>
+        <td>
+            @item.Karma
+            <a asp-area="" asp-page="/Posts/Index"
+               asp-page-handler="GiveKarma" asp-route-instanceId="@Model.ThreadInstanceId" asp-route-id="@item.Id">
+                <span class="fa fa-thumbs-up"></span>
+            </a>
+        </td>
+        <td>@item.CreatorName</td>
+        <td>@item.CommentsCount</td>
+    </tr>
+}

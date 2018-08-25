@@ -1,0 +1,23 @@
+﻿@page  "{id}"
+@model AllModel
+@{
+    ViewData["Title"] = "Comments for " + @Model.PostName;
+}
+
+<h2>@ViewData["Title"]</h2>
+@if (Model.IsUserAuthenticated)
+{
+    <a class="btn btn-info" asp-area="" asp-controller="Comments" asp-action="Add" asp-route-id="@Model.PostId">Add Comment</a>
+}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Description</th>
+            <th>Karma</th>
+            <th>Creator Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>

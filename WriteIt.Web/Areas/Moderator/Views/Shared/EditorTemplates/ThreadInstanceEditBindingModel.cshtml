@@ -1,0 +1,6 @@
+﻿@model ThreadInstanceEditBindingModel
+
+<input type="hidden" asp-for="Id" />
+<input type="hidden" asp-for="ThreadName" />
+@Html.FormGroupFor(model => model.Name)
+@Html.FormGroupFor(model => model.Description)

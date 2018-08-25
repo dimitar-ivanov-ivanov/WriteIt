@@ -1,0 +1,36 @@
+﻿@model ThreadInstanceConciseViewModel
+<tr>
+    <td>
+        <a asp-area="" asp-page="/Posts/Index" asp-route-id="@Model.Id">
+            @Model.Name
+        </a>
+    </td>
+    <td>@Model.Description</td>
+    <td>@Model.DateOfRegistry</td>
+    <td>@Model.CreatorName</td>
+    <td>@Model.PostsCount</td>
+    <td>@Model.TotalKarma</td>
+    @if (!Model.IsUserAuthenticated)
+    {
+        <td>-</td>
+    }
+    else
+    {
+        if (Model.IsUserSubscribed)
+        {
+            <td>
+                <a class="btn btn-warning" asp-area="" asp-controller="ThreadInstances" asp-action="Unsubscribe" asp-route-id="@Model.Id">
+                    Unsubscribe
+                </a>
+            </td>
+        }
+        else
+        {
+            <td>
+                <a class="btn btn-success" asp-area="" asp-controller="ThreadInstances" asp-action="Subscribe" asp-route-id="@Model.Id">
+                    Subscribe
+                </a>
+            </td>
+        }
+    }
+</tr>

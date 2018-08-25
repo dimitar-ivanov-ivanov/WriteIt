@@ -1,0 +1,15 @@
+﻿@model DetailsModel
+<p><strong>Username:</strong> @Model.Post.Name</p>
+<p><strong>Description:</strong> @Model.Post.Description</p>
+<p>
+    <strong>Karma:</strong>
+    @Model.Post.Karma
+    <a asp-area="" asp-page="/Posts/Details"
+       asp-page-handler="GiveKarma" asp-route-instanceId ="@Model.ThreadInstanceId" asp-route-id="@Model.Post.Id">
+        <span class="fa fa-thumbs-up"></span>
+    </a>
+</p>
+<p><strong>Creator name:</strong> @Model.Post.CreatorName</p>
+<p><strong>Thread instance name:</strong> @Model.Post.ThreadInstanceName</p>
+
+<a class="btn btn-primary" asp-area="" asp-page="/Comments/All" asp-route-id="@Model.Post.Id">View Comments</a>

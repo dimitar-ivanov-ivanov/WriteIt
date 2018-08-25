@@ -1,0 +1,4 @@
+﻿@model CommentCreationBindingModel
+
+@Html.FormGroupFor(model => model.Description)
+<input type="hidden" asp-for="PostId" />

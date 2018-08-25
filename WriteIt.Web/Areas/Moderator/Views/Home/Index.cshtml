@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Welcome to admin page</h2>
+
+<a asp-area="Moderator" asp-controller="ThreadInstances"
+   asp-action="Create" class="btn btn-success">
+    <span class="fa fa-plus">Create Thread Instance</span>
+</a>
+<br />
+<a asp-area="Moderator" asp-controller="ThreadInstances"
+   asp-action="Index" class="btn btn-success">
+    <span class="fa fa-chalkboard">View Thread instances</span>
+</a>

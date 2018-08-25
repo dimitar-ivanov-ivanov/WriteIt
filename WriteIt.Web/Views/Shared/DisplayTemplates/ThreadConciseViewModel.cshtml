@@ -1,0 +1,11 @@
+﻿@model ThreadConciseViewModel
+
+<tr>
+    <td>
+        <a asp-area="" asp-controller="ThreadInstances" asp-action="Index" asp-route-id="@Model.Id">
+            @Model.Name
+        </a>
+    </td>
+    <td>@Model.Description</td>
+    <td>@Model.InstancesCount</td>
+</tr>

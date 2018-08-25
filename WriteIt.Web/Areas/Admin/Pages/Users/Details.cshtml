@@ -1,0 +1,8 @@
+﻿@page  "{id}"
+@model DetailsModel
+@{
+    ViewData["Title"] = "Details for " + @Model.UserDetails.Username;
+}
+
+<h2>Details for @Model.UserDetails.Username</h2>
+@Html.DisplayForModel()

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WriteIt.Common\WriteIt.Common.csproj" />
+    <ProjectReference Include="..\WriteIt.Data\WriteIt.Data.csproj" />
+    <ProjectReference Include="..\WriteIt.Models\WriteIt.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+  </ItemGroup>
+
+</Project>

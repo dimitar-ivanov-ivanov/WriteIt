@@ -1,0 +1,15 @@
+﻿@model ThreadInstanceDeleteViewModel
+@{
+    ViewData["Title"] = "Delete instance";
+}
+
+<h2>Delete instance</h2>
+<form asp-area="Moderator" asp-controller="ThreadInstances" asp-action="Delete" method="post" class="form-horizontal">
+    @Html.EditorForModel()
+    <div class="form-group">
+        <div class="col-sm-10 col-sm-push-2">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-area="Moderator" asp-controller="ThreadInstances" asp-action="Index" class="btn btn-default">Cancel</a>
+        </div>
+    </div>
+</form>

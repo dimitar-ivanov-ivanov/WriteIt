@@ -1,0 +1,22 @@
+﻿@model DetailsModel
+<p><strong>Username:</strong> @Model.UserDetails.Username</p>
+<p><strong>Full name:</strong> @Model.UserDetails.FullName</p>
+<p>
+    <strong>Email:</strong>
+    <a href="maito://@Model.UserDetails.Email">
+        @Model.UserDetails.Email
+    </a>
+</p>
+
+<p>
+    <ul>
+        <li>Student</li>
+        @if (Model.UserDetails.Roles.Any())
+        {
+            @foreach (string role in Model.UserDetails.Roles)
+            {
+                <li>@role</li>
+            }
+        }
+    </ul>
+</p>

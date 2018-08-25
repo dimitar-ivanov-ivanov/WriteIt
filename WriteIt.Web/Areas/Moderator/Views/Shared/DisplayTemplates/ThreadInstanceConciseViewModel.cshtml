@@ -1,0 +1,17 @@
+﻿@model ThreadInstanceConciseViewModel
+
+<tr>
+    <td>@Model.Name</td>
+    <td>@Model.Description</td>
+    <td>
+        <a class="btn btn-default" asp-area="Moderator" asp-page="/ThreadInstances/Details" asp-route-id="@Model.Id">
+            Details
+        </a>
+        <a class="btn btn-warning" asp-area="Moderator" asp-controller="ThreadInstances" asp-action="Edit" asp-route-id="@Model.Id">
+            Edit instance
+        </a>
+        <a class="btn btn-danger" asp-area="Moderator" asp-controller="ThreadInstances" asp-action="Delete" asp-route-id="@Model.Id">
+            Delete instance
+        </a>
+    </td>
+</tr>

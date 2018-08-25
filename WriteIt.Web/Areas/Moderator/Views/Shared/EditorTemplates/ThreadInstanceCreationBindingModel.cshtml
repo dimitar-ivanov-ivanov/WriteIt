@@ -1,0 +1,11 @@
+﻿@model ThreadInstanceCreationBindingModel
+
+<div class="form-group">
+    <label asp-for="ThreadId" class="control-label col-sm-2"></label>
+    <div class="col-sm-10">
+        <select asp-for="ThreadId" asp-items="Model.Threads" class="form-control"></select>
+        <span asp-validation-for="ThreadId"></span>
+    </div>
+</div>
+@Html.FormGroupFor(model => model.Name)
+@Html.FormGroupFor(model => model.Description)

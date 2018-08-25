@@ -1,0 +1,25 @@
+﻿@model UserConciseViewModel
+
+<tr>
+    <td>@Model.Username</td>
+    <td>@Model.Email</td>
+    <td>
+        <a class="btn btn-default" asp-area="Admin" asp-page="/Users/Details" asp-route-id="@Model.Id">
+            Details
+        </a>
+
+        @if (!Model.IsAdmin)
+        {
+            @if (!@Model.IsModerator)
+            {
+                <a class="btn btn-primary" asp-area="Admin" asp-controller="Users" asp-action="MakeModerator" asp-route-id="@Model.Id">
+                    Make Moderator
+                </a>
+            }
+
+            <a class="btn btn-danger" asp-area="Admin" asp-controller="Users" asp-action="Delete" asp-route-id="@Model.Id">
+                Delete User
+            </a>
+        }
+    </td>
+</tr>

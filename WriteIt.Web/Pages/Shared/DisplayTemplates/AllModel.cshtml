@@ -1,0 +1,16 @@
+﻿@model AllModel
+
+@foreach (var item in Model.Comments)
+{
+    <tr>
+        <td>@item.Description</td>
+        <td>
+            @item.Karma
+            <a asp-area="" asp-page="/Comments/All"
+               asp-page-handler="GiveKarma" asp-route-postId="@Model.PostId" asp-route-id="@item.Id">
+                <span class="fa fa-thumbs-up"></span>
+            </a>
+        </td>
+        <td>@item.CreatorName</td>
+    </tr>
+}

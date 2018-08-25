@@ -1,0 +1,24 @@
+﻿@page  "{id}"
+@model WriteIt.Web.Pages.Posts.IndexModel
+@{
+    ViewData["Title"] = "Posts for " + @Model.ThreadInstanceName;
+}
+
+<h2>@ViewData["Title"]</h2>
+@if (Model.IsUserAuthenticated)
+{
+    <a class="btn btn-info" asp-area="" asp-controller="Posts" asp-action="Add" asp-route-id="@Model.ThreadInstanceId">Add Post</a>
+}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Karma</th>
+            <th>Creator Name</th>
+            <th>Comments count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ThreadConciseViewModel>
+@{
+    ViewData["Title"] = "All Threads";
+}
+
+<h2>@ViewData["Title"]</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Number of instances</th>
+        </tr>
+    </thead>
+    <tbody>
+        @Html.DisplayForModel()
+    </tbody>
+</table>
