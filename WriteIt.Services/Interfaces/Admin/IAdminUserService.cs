@@ -13,8 +13,8 @@
 
         Task<User> MakeModerator(string id);
 
-        Task<UserDeleteViewModel> GetUserToDeleteAsync(string id);
+        //Task<UserDeleteViewModel> GetUserToDeleteAsync(string id);
 
-        Task DeleteUserAsync(UserDeleteViewModel model);
+        //Task DeleteUserAsync(UserDeleteViewModel model);
     }
 }

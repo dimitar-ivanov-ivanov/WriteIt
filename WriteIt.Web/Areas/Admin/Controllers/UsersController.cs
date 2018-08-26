@@ -54,46 +54,46 @@
             return RedirectToAction("/Index");
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Delete(string id)
-        {
-            var currentUser = await GetCurrentUser();
+        //[HttpGet]
+        //public async Task<IActionResult> Delete(string id)
+        //{
+        //    var currentUser = await GetCurrentUser();
 
-            if (currentUser.Id == id)
-            {
-                return Unauthorized();
-            }
+        //    if (currentUser.Id == id)
+        //    {
+        //        return Unauthorized();
+        //    }
 
-            var model = await this.userService.GetUserToDeleteAsync(id);
+        //    var model = await this.userService.GetUserToDeleteAsync(id);
 
-            if (model == null)
-            {
-                return NotFound();
-            }
+        //    if (model == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
 
-        [HttpPost]
-        public async Task<IActionResult> Delete(UserDeleteViewModel model)
-        {
-            var currentUser = await GetCurrentUser();
+        //[HttpPost]
+        //public async Task<IActionResult> Delete(UserDeleteViewModel model)
+        //{
+        //    var currentUser = await GetCurrentUser();
 
-            if (currentUser.Id == model.Id)
-            {
-                return Unauthorized();
-            }
+        //    if (currentUser.Id == model.Id)
+        //    {
+        //        return Unauthorized();
+        //    }
 
-            await this.userService.DeleteUserAsync(model);
+        //    await this.userService.DeleteUserAsync(model);
 
-            this.TempData.Put("__Message", new MessageModel()
-            {
-                Type = MessageType.Danger,
-                Message = "User deleted successfully"
-            });
+        //    this.TempData.Put("__Message", new MessageModel()
+        //    {
+        //        Type = MessageType.Danger,
+        //        Message = "User deleted successfully"
+        //    });
 
-            return RedirectToAction("/Index");
-        }
+        //    return RedirectToAction("/Index");
+        //}
 
         private async Task<User> GetCurrentUser()
         {

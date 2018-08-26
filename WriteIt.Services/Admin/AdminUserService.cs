@@ -91,19 +91,26 @@
             return user;
         }
 
-        public async Task<UserDeleteViewModel> GetUserToDeleteAsync(string id)
-        {
-            var user = await this.GetUser(id);
+        //public async Task<UserDeleteViewModel> GetUserToDeleteAsync(string id)
+        //{
+        //    var user = await this.GetUser(id);
 
-            if (user == null)
-            {
-                return null;
-            }
+        //    if (user == null)
+        //    {
+        //        return null;
+        //    }
 
-            var model = this.Mapper.Map<UserDeleteViewModel>(user);
+        //    var model = this.Mapper.Map<UserDeleteViewModel>(user);
 
-            return model;
-        }
+        //    return model;
+        //}
+
+        //public async Task DeleteUserAsync(UserDeleteViewModel model)
+        //{
+        //    var user = await GetUser(model.Id);
+
+        //    await this.userManager.DeleteAsync(user);
+        //}
 
         private async Task<User> GetUser(string id)
         {
@@ -112,13 +119,6 @@
                .FindAsync(id);
 
             return user;
-        }
-
-        public async Task DeleteUserAsync(UserDeleteViewModel model)
-        {
-            var user = await GetUser(model.Id);
-
-            await this.userManager.DeleteAsync(user);
         }
     }
 }
